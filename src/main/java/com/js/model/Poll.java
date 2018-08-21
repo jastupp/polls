@@ -1,17 +1,26 @@
 package com.js.model;
 
-import java.time.LocalDateTime;
-import java.util.Set;
-import java.util.TreeSet;
 
-public class Poll {
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.Serializable;
+import java.util.*;
+
+public class Poll implements Serializable {
 
     //*****************
     // Class members **
     //*****************
+    private Integer m_id;
     private String m_question;
-    private LocalDateTime m_created;
+    private Date m_created;
     private Set<Choice> m_choices;
+
+    /**
+     * Constructor
+     */
+    public Poll() {}
 
     /**
      * Constructor
@@ -21,7 +30,7 @@ public class Poll {
     public Poll(String question)
     {
         // use the other constructor
-        this(question, LocalDateTime.now());
+        this(question, new Date());
     }
 
     /**
@@ -30,41 +39,91 @@ public class Poll {
      * @param question - the question
      * @param created - the date created
      */
-    public Poll(String question, LocalDateTime created)
+    public Poll(String question, Date created)
     {
         // set the class members
         m_question = question;
         m_created = created;
     }
 
+    /**
+     * Get the id
+     *
+     * @return - the poll id
+     */
+    @JsonIgnore
+    public Integer getId()
+    {
+        return m_id;
+    }
+
+    /**
+     * Set the id
+     * @param id - the id
+     */
+    public void setId(Integer id)
+    {
+        m_id = id;
+    }
+
+    /**
+     * Get the question
+     *
+     * @return - the question
+     */
     public String getQuestion()
     {
         return m_question;
     }
 
+    /**
+     * Set the question
+     *
+     * @param question - the question
+     */
     public void setQuestion(String question)
     {
         m_question = question;
     }
 
-    public LocalDateTime getCreated()
+    /**
+     * Get the created date
+     *
+     * @return - the created date
+     */
+    @JsonProperty("published-at")
+    public Date getCreated()
     {
         return m_created;
     }
 
-    public void setCreated(LocalDateTime created)
+    /**
+     * Set the created date
+     *
+     * @param created - the created date
+     */
+    public void setCreated(Date created)
     {
         m_created = created;
     }
 
+    /**
+     * Get the choices for the poll
+     *
+     * @return - the choices
+     */
     public Set<Choice> getChoices()
     {
         return m_choices == null ? m_choices = new TreeSet<>() : m_choices;
     }
 
+    /**
+     * Set the choices
+     *
+     * @param choices - the choices
+     */
     public void setChoices(Set<Choice> choices)
     {
         m_choices = choices;
     }
-
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.js.model.Choice" table="Choice">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <!--<many-to-one name="Poll" class="com.js.model.Poll" fetch="select">-->
+            <!--<column name="poll_id" not-null="true" />-->
+        <!--</many-to-one>-->
+        <property name="choice" type="string" length="255">
+            <column name="name"/>
+        </property>
+        <property name="votes" type="java.lang.Integer">
+            <column name="number_votes" />
+        </property>
+    </class>
+</hibernate-mapping>

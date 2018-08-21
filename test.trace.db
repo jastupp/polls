@@ -1,0 +1,12 @@
+2018-08-21 15:23:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CHOICE" not found; SQL statement:
+select choice0_.id as id1_0_, choice0_.poll_id as poll_id2_0_, choice0_.name as name3_0_, choice0_.votes as votes4_0_ from Choice choice0_ [42102-197]
+2018-08-21 15:56:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CHOICE" not found; SQL statement:
+select choice0_.id as id1_0_, choice0_.poll_id as poll_id2_0_, choice0_.name as name3_0_, choice0_.number_votes as number_v4_0_ from Choice choice0_ [42102-197]
+2018-08-21 16:47:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "POLL" not found; SQL statement:
+select poll0_.id as id1_1_, poll0_.question as question2_1_, poll0_.created as created3_1_ from Poll poll0_ [42102-197]
+2018-08-21 18:27:49 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "POLLS" not found; SQL statement:
+select * from polls [42102-197]
