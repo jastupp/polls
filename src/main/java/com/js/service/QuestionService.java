@@ -1,12 +1,12 @@
 package com.js.service;
 
-import com.js.model.Question;
+import com.js.model.Poll;
 
 import java.util.Set;
 
 public interface QuestionService {
 
-    Set<Question> getQuestions();
+    Set<Poll> getQuestions();
 
 
 

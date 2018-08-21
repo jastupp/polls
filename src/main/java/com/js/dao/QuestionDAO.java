@@ -1,6 +1,6 @@
 package com.js.dao;
 
-import com.js.model.Question;
+import com.js.model.Poll;
 
 import java.util.Set;
 
@@ -11,6 +11,6 @@ public interface QuestionDAO {
      *
      * @return -
      */
-    Set<Question> getQuestions();
+    Set<Poll> getQuestions();
 
 }

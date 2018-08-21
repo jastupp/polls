@@ -1,6 +1,6 @@
 package com.js.controller;
 
-import com.js.model.Question;
+import com.js.model.Poll;
 import com.js.service.QuestionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class QuestionController {
     @RequestMapping(value = "/question", method = RequestMethod.GET)
     public ResponseEntity getQuestions() {
 
-        Set<Question> questions = m_question_service.getQuestions();
+        Set<Poll> questions = m_question_service.getQuestions();
         return new ResponseEntity(questions, HttpStatus.OK);
     }
 
