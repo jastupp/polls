@@ -9,6 +9,7 @@ public class Choice implements Serializable {
     // Class Members **
     //*****************
     private Integer m_id;
+    private Integer m_poll_id;
     private String m_choice;
     private int m_votes;
 
@@ -60,6 +61,17 @@ public class Choice implements Serializable {
     public void setId(Integer id)
     {
         m_id = id;
+    }
+
+    @JsonIgnore
+    public void setPollId(Integer poll_id)
+    {
+        m_poll_id = poll_id;
+    }
+
+    public Integer getPollId()
+    {
+        return m_poll_id;
     }
 
     /**

@@ -31,6 +31,16 @@ public class PollServiceImpl implements PollService {
         return dao().getPolls();
     }
 
+    /**
+     * Create a new poll
+     *
+     * @return - the new poll
+     */
+    public Poll create(Poll poll)
+    {
+        return dao().create(poll);
+    }
+
     //*******************
     // Private Methods **
     //*******************

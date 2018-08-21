@@ -4,12 +4,12 @@
 <hibernate-mapping>
     <class name="com.js.model.Choice" table="Choice">
         <id name="id" type="java.lang.Integer">
-            <column name="id" />
+            <column name="choice_id" />
             <generator class="identity" />
         </id>
-        <!--<many-to-one name="Poll" class="com.js.model.Poll" fetch="select">-->
-            <!--<column name="poll_id" not-null="true" />-->
-        <!--</many-to-one>-->
+        <property name="pollId" type="java.lang.Integer">
+            <column name="poll_id"/>
+        </property>
         <property name="choice" type="string" length="255">
             <column name="name"/>
         </property>

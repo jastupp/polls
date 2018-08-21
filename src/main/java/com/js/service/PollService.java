@@ -13,4 +13,12 @@ public interface PollService {
      */
     List<Poll> getPolls();
 
+    /**
+     * Create a new poll
+     *
+     * @param poll -
+     * @return - the created poll
+     */
+    Poll create(Poll poll);
+
 }

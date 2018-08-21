@@ -4,7 +4,7 @@
 <hibernate-mapping>
     <class name="com.js.model.Poll" table="Poll">
         <id name="id" type="java.lang.Integer">
-            <column name="id" />
+            <column name="poll_id" />
             <generator class="identity" />
         </id>
         <property name="question" type="string">
@@ -14,7 +14,7 @@
             <column name="created" not-null="true" />
         </property>
         <set name="choices" table="Choice"
-             inverse="true" lazy="true" fetch="select">
+             inverse="true" lazy="true" fetch="select" >
             <key>
                 <column name="poll_id" not-null="true" />
             </key>

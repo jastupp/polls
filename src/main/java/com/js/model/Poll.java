@@ -94,7 +94,7 @@ public class Poll implements Serializable {
     @JsonProperty("published-at")
     public Date getCreated()
     {
-        return m_created;
+        return m_created == null ? new Date() : m_created;
     }
 
     /**
