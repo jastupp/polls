@@ -114,7 +114,7 @@ public class Poll implements Serializable {
      */
     public Set<Choice> getChoices()
     {
-        return m_choices == null ? m_choices = new TreeSet<>() : m_choices;
+        return m_choices == null ? m_choices = new HashSet<>() : m_choices;
     }
 
     /**
@@ -125,5 +125,20 @@ public class Poll implements Serializable {
     public void setChoices(Set<Choice> choices)
     {
         m_choices = choices;
+    }
+
+    /**
+     * Check the items are equal
+     *
+     * @param that -
+     * @return -
+     */
+    @Override
+    public boolean equals(Object that)
+    {
+        // true if equal
+        return that instanceof Poll &&
+                getQuestion().equals(((Poll)that).getQuestion()) &&
+                getCreated().equals(((Poll)that).getCreated());
     }
 }

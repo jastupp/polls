@@ -740,3 +740,6 @@ alter table Poll add constraint PK_POLL primary key(poll_id) [90045-197]
 2018-08-21 23:27:28 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FORM[*] POLL "; SQL statement:
 select * form Poll [42000-197]
+2018-08-22 08:53:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "POLLS" not found; SQL statement:
+select * from polls [42102-197]

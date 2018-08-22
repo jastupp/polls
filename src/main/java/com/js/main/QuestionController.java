@@ -5,16 +5,15 @@ import com.js.service.PollService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.xml.ws.Response;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/questions")
 public class QuestionController {
 
     //*****************
@@ -37,7 +36,7 @@ public class QuestionController {
      *
      * @return - the polls
      */
-    @GetMapping(value = "/question")
+    @GetMapping
     public ResponseEntity<List<Poll>> getPolls()
     {
         List<Poll> questions = service().getPolls();
@@ -47,7 +46,7 @@ public class QuestionController {
     /**
      * Post the new question
      */
-    @PostMapping(value = "/questions")
+    @PostMapping
     public ResponseEntity<Poll> createOrder(@RequestBody Poll poll) throws URISyntaxException
     {
         Poll new_poll = service().create(poll);
